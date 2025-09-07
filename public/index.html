@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Reflection</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="auth-section">
+    <h1>Daily Reflection</h1>
+    <div id="register">
+      <h2>Create Account</h2>
+      <input type="text" id="reg-email" placeholder="Email" />
+      <input type="password" id="reg-password" placeholder="Password" />
+      <button id="register-btn">Register</button>
+    </div>
+    <div id="login">
+      <h2>Login</h2>
+      <input type="text" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button id="login-btn">Login</button>
+    </div>
+  </div>
+
+  <div id="app" class="hidden">
+    <h1 id="welcome"></h1>
+    <div id="log-form">
+      <h2>Log Today's Reflection</h2>
+      <input type="date" id="date" />
+      <label for="score">Collins Score:</label>
+      <select id="score">
+        <option value="-2">-2</option>
+        <option value="-1">-1</option>
+        <option value="0" selected>0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+      <textarea id="reflection" placeholder="Reflection"></textarea>
+      <button id="save-btn">Save</button>
+    </div>
+
+    <div id="history">
+      <h2>History</h2>
+      <button id="view-table">Table View</button>
+      <button id="view-chart">Trend View</button>
+      <div id="table-view" class="hidden">
+        <table>
+          <thead>
+            <tr><th>Date</th><th>Score</th><th>Reflection</th></tr>
+          </thead>
+          <tbody id="history-body"></tbody>
+        </table>
+      </div>
+      <div id="chart-view" class="hidden">
+        <canvas id="history-chart"></canvas>
+      </div>
+    </div>
+
+    <button id="logout-btn">Logout</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
